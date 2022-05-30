@@ -1,6 +1,6 @@
 <?php
 
-namespace Quarterloop\DNSTile;
+namespace Quarterloop\w3cValidatorTile;
 
 use Spatie\Dashboard\Models\Tile;
 use Illuminate\Support\Facades\DB;
