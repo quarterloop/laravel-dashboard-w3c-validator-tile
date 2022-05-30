@@ -13,26 +13,10 @@
 
           <ul class="mt-auto mb-auto">
             <span class="pl-1 font-small text-xs">A-Record</span>
-            @foreach($aRecords as $aRecord)
+            @foreach()
             <li class="pr-1">
               <div class="flex justify-center">
-                <span class="pl-1 font-small text-xs ml-auto">{{ $aRecord }}</span>
-              </div>
-            </li>
-            @endforeach
-            <span class="pl-1 font-small text-xs">MX-Record</span>
-            @foreach($mxRecords as $mxRecord)
-            <li class="pr-1">
-              <div class="flex justify-center">
-                <span class="pl-1 font-small text-xs ml-auto">{{ $mxRecord }}</span>
-              </div>
-            </li>
-            @endforeach
-            <span class="pl-1 font-small text-xs">NS-Record</span>
-            @foreach($nsRecords as $nsRecord)
-            <li class="pr-1">
-              <div class="flex justify-center">
-                <span class="pl-1 font-small text-xs ml-auto">{{ $nsRecord }}</span>
+                <span class="pl-1 font-small text-xs ml-auto"></span>
               </div>
             </li>
             @endforeach
