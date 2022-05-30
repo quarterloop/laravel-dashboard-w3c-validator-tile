@@ -1,6 +1,6 @@
 <?php
 
-namespace Quarterloop\DNSTile;
+namespace Quarterloop\w3cValidatorTile;
 
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
