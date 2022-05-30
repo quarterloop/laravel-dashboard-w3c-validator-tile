@@ -11,15 +11,18 @@
         <p class="font-small text-dimmed text-xs lowercase tracking-wide tabular-nums text-center pb-2">{{ $website }}</p>
 
 
-          <ul class="mt-auto mb-auto">
-            <span class="pl-1 font-small text-xs">A-Record</span>
-
-            <li class="pr-1">
-              <div class="flex justify-center">
-                <span class="pl-1 font-small text-xs ml-auto"></span>
+          <p class="font-small text-xs">Messages</p>
+          <p class="font-small text-xs text-center">Infos: {{ $infoCounter }}</p>
+          <p class="font-small text-xs text-center">Warungen: {{ $warningCounter }}</p>
+          <p class="font-small text-xs text-center">Fehler: {{ $errorCounter }}</p>
+          <ul class="mt-auto border-t border-l border-r border-white">
+            @foreach( $messages as $message)
+              <div class="p-1 border-b border-white flex">
+                <span class="w-1/5 p-1 font-small text-xs">{{ $message['type'] }}</span>
+                <span class="w-3/5 p-1 border-l border-white font-small text-xs">{{ $message['message'] }}</span>
+                <span class="w-1/5 p-1 border-l border-white font-small text-xs"> in Line {{ $message['lastLine'] }}</span>
               </div>
-            </li>
-            
+            @endforeach
           </ul>
 
           <p class="text-dimmed lowercase tracking-wide tabular-nums text-center absolute bottom-0 left-0 mr-auto ml-auto mb-5 w-full"
