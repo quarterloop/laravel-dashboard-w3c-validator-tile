@@ -20,7 +20,7 @@ class w3cValidatorTileComponent extends Component
 
         $w3cValidatorStore = w3cValidatorStore::make();
 
-        return view('dashboard-dns-tile::tile', [
+        return view('dashboard-w3c-validator-tile::tile', [
             'website'         => config('dashboard.tiles.hosting.url'),
             // 'aRecords'        => $w3cValidatorStore->getData()['a'],
             'lastUpdateTime'  => date('H:i:s', strtotime($w3cValidatorStore->getLastUpdateTime())),
