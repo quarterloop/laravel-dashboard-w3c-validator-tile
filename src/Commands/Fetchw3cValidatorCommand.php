@@ -21,7 +21,7 @@ class Fetchw3cValidatorCommand extends Command
             config('dashboard.tiles.hosting.url'),
         );
 
-        DNSStore::make()->setData($w3c_validator);
+        w3cValidatorStore::make()->setData($w3c_validator);
 
         $this->info('Stored data ...');
 
