@@ -6,7 +6,7 @@ use Spatie\Dashboard\Models\Tile;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
-class DNSStore
+class w3cValidatorStore
 {
     private Tile $tile;
 
@@ -17,24 +17,24 @@ class DNSStore
 
     public function __construct()
     {
-        $this->tile = Tile::firstOrCreateForName("dns-info");
+        $this->tile = Tile::firstOrCreateForName("w3cValidator");
     }
 
     public function setData(array $data): self
     {
-        $this->tile->putData('dns-info', $data);
+        $this->tile->putData('w3cValidator', $data);
 
         return $this;
     }
 
     public function getData(): array
     {
-        return$this->tile->getData('dns-info') ?? [];
+        return$this->tile->getData('w3cValidator') ?? [];
     }
 
     public function getLastUpdateTime()
     {
-        $tileName = 'dns-info';
+        $tileName = 'w3cValidator';
 
         $queryTime = DB::table('dashboard_tiles')->select('updated_at')->where('name', '=', $tileName)->get();
 
@@ -45,7 +45,7 @@ class DNSStore
 
     public function getLastUpdateDate()
     {
-        $tileName = 'dns-info';
+        $tileName = 'w3cValidator';
 
         $queryDate = DB::table('dashboard_tiles')->select('updated_at')->where('name', '=', $tileName)->get();
 
