@@ -13,13 +13,13 @@
 
           <ul class="mt-auto mb-auto">
             <span class="pl-1 font-small text-xs">A-Record</span>
-            @foreach()
+
             <li class="pr-1">
               <div class="flex justify-center">
                 <span class="pl-1 font-small text-xs ml-auto"></span>
               </div>
             </li>
-            @endforeach
+            
           </ul>
 
           <p class="text-dimmed lowercase tracking-wide tabular-nums text-center absolute bottom-0 left-0 mr-auto ml-auto mb-5 w-full"
