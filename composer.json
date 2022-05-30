@@ -1,11 +1,11 @@
 {
-    "name": "quarterloop/laravel-dashboard-dns-tile",
-    "description": "A DNS info tile for the Laravel Dashboard",
+    "name": "quarterloop/laravel-dashboard-w3c-validator-tile",
+    "description": "A W3C-Validator tile for the Laravel Dashboard",
     "keywords": [
         "quarterloop",
-        "laravel-dashboard-dns-tile"
+        "laravel-dashboard-w3c-validator-tile"
     ],
-    "homepage": "https://github.com/quarterloop/laravel-dashboard-dns-tile",
+    "homepage": "https://github.com/quarterloop/laravel-dashboard-w3c-validator-tile",
     "license": "MIT",
     "authors": [
         {
@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Quarterloop\\DNSTile\\": "src"
+            "Quarterloop\\w3cValidatorTile\\": "src"
         }
     },
     "scripts": {
@@ -36,7 +36,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Quarterloop\\DNSTile\\DNSTileServiceProvider"
+                "Quarterloop\\w3cValidatorTile\\w3cValidatorTileServiceProvider"
             ]
         }
     },
