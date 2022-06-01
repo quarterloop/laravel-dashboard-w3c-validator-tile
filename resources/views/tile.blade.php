@@ -7,28 +7,39 @@
           </svg>
         </a>
 
-        <h1 class="font-medium text-dimmed text-sm uppercase tracking-wide tabular-nums text-center">DNS</h1>
+        <h1 class="font-medium text-dimmed text-sm uppercase tracking-wide tabular-nums text-center">W3C Validator</h1>
         <p class="font-small text-dimmed text-xs lowercase tracking-wide tabular-nums text-center pb-2">{{ $website }}</p>
+        <p class="text-dimmed lowercase tracking-wide tabular-nums text-center mr-auto ml-auto mb-5 w-full"
+           style="font-size: 12px;">
+           {{ $lastUpdateDate }} - {{ $lastUpdateTime }}
+        </p>
 
+        <div class="flex flex-row justify-between">
+            <div class="flex flex-col w-1/3">
+                <div class="font-small text-xs text-center">{{ $infoCounter }}</div>
+                <div class="font-small text-xs text-center">Info</div>
+            </div>
+            <div class="flex flex-col w-1/3">
+                <div class="font-small text-xs text-center">{{ $warningCounter }}</div>
+                <div class="font-small text-xs text-center">Warungen</div>
+            </div>
+            <div class="flex flex-col w-1/3">
+                <div class="font-small text-xs text-center">{{ $errorCounter }}</div>
+                <div class="font-small text-xs text-center">Fehler</div>
+            </div>
+        </div>
 
-          <p class="font-small text-xs">Messages</p>
-          <p class="font-small text-xs text-center">Infos: {{ $infoCounter }}</p>
-          <p class="font-small text-xs text-center">Warungen: {{ $warningCounter }}</p>
-          <p class="font-small text-xs text-center">Fehler: {{ $errorCounter }}</p>
-          <ul class="mt-auto border-t border-l border-r border-white">
-            @foreach( $messages as $message)
-              <div class="p-1 border-b border-white flex">
-                <span class="w-1/5 p-1 font-small text-xs">{{ $message['type'] }}</span>
-                <span class="w-3/5 p-1 border-l border-white font-small text-xs">{{ $message['message'] }}</span>
-                <span class="w-1/5 p-1 border-l border-white font-small text-xs"> in Line {{ $message['lastLine'] }}</span>
-              </div>
-            @endforeach
+        <div class="mt-5">
+          <ul class="h-64 overflow-y-auto">
+          @foreach( $messages as $message)
+            <div class="p-1 border-b border-white flex">
+              <span class="w-1/6 p-1 font-small text-xs">{{ $message['type'] }}</span>
+              <span class="w-4/6 p-1 border-l border-white font-small text-xs">{{ $message['message'] }}</span>
+              <span class="w-1/6 p-1 border-l border-white font-small text-xs"> in Line {{ $message['lastLine'] }}</span>
+            </div>
+          @endforeach
           </ul>
-
-          <p class="text-dimmed lowercase tracking-wide tabular-nums text-center absolute bottom-0 left-0 mr-auto ml-auto mb-5 w-full"
-             style="font-size: 12px;">
-             {{ $lastUpdateDate }} - {{ $lastUpdateTime }}
-          </p>
+        </div>
 
     </div>
 </x-dashboard-tile>
