@@ -32,6 +32,8 @@ class w3cValidatorTileComponent extends Component
                                 return $element['type']=='error';
                               }));
 
+        $countMessages      = $countInfoMessages + $countWarnMessages + $countErrorMessages;
+
 
         return view('dashboard-w3c-validator-tile::tile', [
             'website'         => config('dashboard.tiles.hosting.url'),
@@ -41,6 +43,7 @@ class w3cValidatorTileComponent extends Component
             'infoCounter'     => $countInfoMessages,
             'warningCounter'  => $countWarnMessages,
             'errorCounter'    => $countErrorMessages,
+            'allMessages'     => $countMessages,
         ]);
     }
 }

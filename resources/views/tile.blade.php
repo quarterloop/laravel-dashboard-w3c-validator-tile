@@ -30,12 +30,30 @@
         </div>
 
         <div class="mt-5">
-          <ul class="h-64 overflow-y-auto">
+          <div class="flex flex-row justify-between py-1 relative border-b border-white">
+              <div class="pl-1 flex flex-col w-2/12 items-center text-xs relative">
+                  <div class="p-1 w-full text-left">Type</div>
+              </div>
+              <div class="pl-1 flex flex-col w-8/12 items-center text-xs relative">
+                  <div class="p-1 w-full text-left">Content</div>
+              </div>
+              <div class="pl-1 flex flex-col w-2/12 items-center text-xs relative">
+                  <div class="p-1 w-full text-left">Line</div>
+              </div>
+          </div>
+          <ul class="h-48 overflow-y-scroll">
+            <div class="text-center @if($allMessages <= 0) block @else hidden @endif">No Messages</div>
           @foreach( $messages as $message)
-            <div class="p-1 border-b border-white flex">
-              <span class="w-1/6 p-1 font-small text-xs">{{ $message['type'] }}</span>
-              <span class="w-4/6 p-1 border-l border-white font-small text-xs">{{ $message['message'] }}</span>
-              <span class="w-1/6 p-1 border-l border-white font-small text-xs"> in Line {{ $message['lastLine'] }}</span>
+            <div class="flex flex-row justify-between py-1 relative">
+                <div class="pl-1 flex flex-col w-2/12 items-center text-xs relative">
+                    <div class="p-1 w-full text-left">{{ $message['subType'] ?? $message['type'] }}</div>
+                </div>
+                <div class="pl-1 flex flex-col w-8/12 items-center text-xs relative">
+                    <div class="p-1 w-full text-left">{{ $message['message'] }}</div>
+                </div>
+                <div class="pl-1 flex flex-col w-2/12 items-center text-xs relative">
+                    <div class="p-1 w-full text-left">{{ $message['lastLine'] }}</div>
+                </div>
             </div>
           @endforeach
           </ul>
