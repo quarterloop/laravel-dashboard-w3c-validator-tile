@@ -36,7 +36,6 @@ class w3cValidatorTileComponent extends Component
         return view('dashboard-w3c-validator-tile::tile', [
             'website'         => config('dashboard.tiles.hosting.url'),
             'messages'        => $w3cValidatorStore->getData()['messages'],
-            // 'aRecords'        => $w3cValidatorStore->getData()['a'],
             'lastUpdateTime'  => date('H:i:s', strtotime($w3cValidatorStore->getLastUpdateTime())),
             'lastUpdateDate'  => date('d.m.Y', strtotime($w3cValidatorStore->getLastUpdateDate())),
             'infoCounter'     => $countInfoMessages,
