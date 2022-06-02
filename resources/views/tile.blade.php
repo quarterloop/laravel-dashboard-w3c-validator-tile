@@ -13,16 +13,16 @@
            {{ $lastUpdateDate }} - {{ $lastUpdateTime }}
         </p>
 
-        <div class="flex flex-row justify-between">
-            <div class="flex flex-col w-1/3">
+        <div class="flex flex-row justify-center">
+            <div class="flex flex-col w-1/4 border border-gray-700 border-dimmded rounded pt-3 pb-3 bg-gray-700 m-1">
                 <div class="font-small text-xs text-center">{{ $infoCounter }}</div>
                 <div class="font-small text-xs text-center">Info</div>
             </div>
-            <div class="flex flex-col w-1/3">
+            <div class="flex flex-col w-1/4 border border-gray-700 border-dimmded rounded pt-3 pb-3 bg-yellow-700 m-1">
                 <div class="font-small text-xs text-center">{{ $warningCounter }}</div>
                 <div class="font-small text-xs text-center">Warungen</div>
             </div>
-            <div class="flex flex-col w-1/3">
+            <div class="flex flex-col w-1/4 border border-gray-700 border-dimmded rounded pt-3 pb-3 bg-red-700 m-1">
                 <div class="font-small text-xs text-center">{{ $errorCounter }}</div>
                 <div class="font-small text-xs text-center">Fehler</div>
             </div>
