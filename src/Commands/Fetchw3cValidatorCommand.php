@@ -5,6 +5,7 @@ namespace Quarterloop\w3cValidatorTile\Commands;
 use Illuminate\Console\Command;
 use Quarterloop\w3cValidatorTile\Services\w3cValidatorAPI;
 use Quarterloop\w3cValidatorTile\w3cValidatorStore;
+use Session;
 
 class Fetchw3cValidatorCommand extends Command
 {
@@ -18,7 +19,7 @@ class Fetchw3cValidatorCommand extends Command
         $this->info('Fetching w3c validator data ...');
 
         $w3c_validator = $w3c_validator_api::getW3cValidator(
-            config('dashboard.tiles.hosting.url'),
+            Session::get('website'),
         );
 
         w3cValidatorStore::make()->setData($w3c_validator);
