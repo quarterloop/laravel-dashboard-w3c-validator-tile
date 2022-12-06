@@ -21,11 +21,11 @@ class w3cValidatorTileComponent extends Component
         $w3cValidatorStore  = w3cValidatorStore::make();
 
         $countInfoMessages  = count(array_filter($w3cValidatorStore->getData()['messages'], function($element) {
-                                return $element['type']=='info' && $element['subType']!='warning';
+                                return $element['type']=='info' && !array_key_exists('subType', $element);
                               }));
 
         $countWarnMessages  = count(array_filter($w3cValidatorStore->getData()['messages'], function($element) {
-                                return $element['type']=='info' && $element['subType']=='warning';
+                                return $element['type']=='info' && array_key_exists('subType', $element) && $element['subType'] == 'warning';
                               }));
 
         $countErrorMessages = count(array_filter($w3cValidatorStore->getData()['messages'], function($element) {
